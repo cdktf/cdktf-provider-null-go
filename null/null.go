@@ -3,10 +3,10 @@ package null
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/hashicorp/cdktf-provider-null-go/null/jsii"
+	_init_ "github.com/hashicorp/cdktf-provider-null-go/null/v2/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/hashicorp/cdktf-provider-null-go/null/internal"
+	"github.com/hashicorp/cdktf-provider-null-go/null/v2/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
@@ -26,6 +26,10 @@ type DataNullDataSource interface {
 	// Experimental.
 	SetDependsOn(val *[]*string)
 	// Experimental.
+	ForEach() cdktf.ITerraformIterator
+	// Experimental.
+	SetForEach(val cdktf.ITerraformIterator)
+	// Experimental.
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
@@ -33,8 +37,6 @@ type DataNullDataSource interface {
 	SetHasComputedDefault(val *string)
 	HasComputedDefaultInput() *string
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	Inputs() *map[string]*string
 	SetInputs(val *map[string]*string)
 	InputsInput() *map[string]*string
@@ -84,7 +86,6 @@ type DataNullDataSource interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	ResetHasComputedDefault()
-	ResetId()
 	ResetInputs()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -144,6 +145,16 @@ func (j *jsiiProxy_DataNullDataSource) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataNullDataSource) ForEach() cdktf.ITerraformIterator {
+	var returns cdktf.ITerraformIterator
+	_jsii_.Get(
+		j,
+		"forEach",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataNullDataSource) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -189,16 +200,6 @@ func (j *jsiiProxy_DataNullDataSource) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_DataNullDataSource) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
 		&returns,
 	)
 	return returns
@@ -357,18 +358,18 @@ func (j *jsiiProxy_DataNullDataSource) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataNullDataSource) SetHasComputedDefault(val *string) {
+func (j *jsiiProxy_DataNullDataSource) SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
-		"hasComputedDefault",
+		"forEach",
 		val,
 	)
 }
 
-func (j *jsiiProxy_DataNullDataSource) SetId(val *string) {
+func (j *jsiiProxy_DataNullDataSource) SetHasComputedDefault(val *string) {
 	_jsii_.Set(
 		j,
-		"id",
+		"hasComputedDefault",
 		val,
 	)
 }
@@ -594,14 +595,6 @@ func (d *jsiiProxy_DataNullDataSource) ResetHasComputedDefault() {
 	)
 }
 
-func (d *jsiiProxy_DataNullDataSource) ResetId() {
-	_jsii_.InvokeVoid(
-		d,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (d *jsiiProxy_DataNullDataSource) ResetInputs() {
 	_jsii_.InvokeVoid(
 		d,
@@ -672,21 +665,28 @@ func (d *jsiiProxy_DataNullDataSource) ToTerraform() interface{} {
 
 type DataNullDataSourceConfig struct {
 	// Experimental.
+	Connection interface{} `field:"optional" json:"connection" yaml:"connection"`
+	// Experimental.
 	Count *float64 `field:"optional" json:"count" yaml:"count"`
 	// Experimental.
 	DependsOn *[]cdktf.ITerraformDependable `field:"optional" json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
+	ForEach cdktf.ITerraformIterator `field:"optional" json:"forEach" yaml:"forEach"`
+	// Experimental.
 	Lifecycle *cdktf.TerraformResourceLifecycle `field:"optional" json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#has_computed_default DataNullDataSource#has_computed_default}.
-	HasComputedDefault *string `field:"optional" json:"hasComputedDefault" yaml:"hasComputedDefault"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#id DataNullDataSource#id}.
+	// Experimental.
+	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
+	// If set, its literal value will be stored and returned.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#inputs DataNullDataSource#inputs}.
+	// If not, its value defaults to `"default"`. This argument exists primarily for testing and has little practical use.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#has_computed_default DataNullDataSource#has_computed_default}
+	HasComputedDefault *string `field:"optional" json:"hasComputedDefault" yaml:"hasComputedDefault"`
+	// A map of arbitrary strings that is copied into the `outputs` attribute, and accessible directly for interpolation.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#inputs DataNullDataSource#inputs}
 	Inputs *map[string]*string `field:"optional" json:"inputs" yaml:"inputs"`
 }
 
@@ -1035,6 +1035,10 @@ type Resource interface {
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
+	Connection() interface{}
+	// Experimental.
+	SetConnection(val interface{})
+	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
 	// Experimental.
 	Count() *float64
@@ -1045,12 +1049,14 @@ type Resource interface {
 	// Experimental.
 	SetDependsOn(val *[]*string)
 	// Experimental.
+	ForEach() cdktf.ITerraformIterator
+	// Experimental.
+	SetForEach(val cdktf.ITerraformIterator)
+	// Experimental.
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -1061,6 +1067,10 @@ type Resource interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	// Experimental.
+	Provisioners() *[]interface{}
+	// Experimental.
+	SetProvisioners(val *[]interface{})
 	// Experimental.
 	RawOverrides() interface{}
 	// Experimental.
@@ -1097,7 +1107,6 @@ type Resource interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
-	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -1122,6 +1131,16 @@ func (j *jsiiProxy_Resource) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Resource) Connection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connection",
 		&returns,
 	)
 	return returns
@@ -1157,6 +1176,16 @@ func (j *jsiiProxy_Resource) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_Resource) ForEach() cdktf.ITerraformIterator {
+	var returns cdktf.ITerraformIterator
+	_jsii_.Get(
+		j,
+		"forEach",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Resource) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1187,16 +1216,6 @@ func (j *jsiiProxy_Resource) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Resource) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_Resource) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -1222,6 +1241,16 @@ func (j *jsiiProxy_Resource) Provider() cdktf.TerraformProvider {
 	_jsii_.Get(
 		j,
 		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Resource) Provisioners() *[]interface{} {
+	var returns *[]interface{}
+	_jsii_.Get(
+		j,
+		"provisioners",
 		&returns,
 	)
 	return returns
@@ -1314,6 +1343,14 @@ func NewResource_Override(r Resource, scope constructs.Construct, id *string, co
 	)
 }
 
+func (j *jsiiProxy_Resource) SetConnection(val interface{}) {
+	_jsii_.Set(
+		j,
+		"connection",
+		val,
+	)
+}
+
 func (j *jsiiProxy_Resource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
@@ -1330,10 +1367,10 @@ func (j *jsiiProxy_Resource) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Resource) SetId(val *string) {
+func (j *jsiiProxy_Resource) SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
-		"id",
+		"forEach",
 		val,
 	)
 }
@@ -1350,6 +1387,14 @@ func (j *jsiiProxy_Resource) SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
 		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Resource) SetProvisioners(val *[]interface{}) {
+	_jsii_.Set(
+		j,
+		"provisioners",
 		val,
 	)
 }
@@ -1551,14 +1596,6 @@ func (r *jsiiProxy_Resource) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
-func (r *jsiiProxy_Resource) ResetId() {
-	_jsii_.InvokeVoid(
-		r,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (r *jsiiProxy_Resource) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		r,
@@ -1629,19 +1666,22 @@ func (r *jsiiProxy_Resource) ToTerraform() interface{} {
 
 type ResourceConfig struct {
 	// Experimental.
+	Connection interface{} `field:"optional" json:"connection" yaml:"connection"`
+	// Experimental.
 	Count *float64 `field:"optional" json:"count" yaml:"count"`
 	// Experimental.
 	DependsOn *[]cdktf.ITerraformDependable `field:"optional" json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
+	ForEach cdktf.ITerraformIterator `field:"optional" json:"forEach" yaml:"forEach"`
+	// Experimental.
 	Lifecycle *cdktf.TerraformResourceLifecycle `field:"optional" json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/r/resource#id Resource#id}.
+	// Experimental.
+	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
+	// A map of arbitrary strings that, when changed, will force the null resource to be replaced, re-running any associated provisioners.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/r/resource#triggers Resource#triggers}.
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/r/resource#triggers Resource#triggers}
 	Triggers *map[string]*string `field:"optional" json:"triggers" yaml:"triggers"`
 }
 
