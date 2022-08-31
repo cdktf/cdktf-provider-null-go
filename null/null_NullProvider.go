@@ -185,6 +185,9 @@ func (j *jsiiProxy_NullProvider) TerraformResourceType() *string {
 func NewNullProvider(scope constructs.Construct, id *string, config *NullProviderConfig) NullProvider {
 	_init_.Initialize()
 
+	if err := validateNewNullProviderParameters(scope, id, config); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_NullProvider{}
 
 	_jsii_.Create(
@@ -207,7 +210,7 @@ func NewNullProvider_Override(n NullProvider, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_NullProvider) SetAlias(val *string) {
+func (j *jsiiProxy_NullProvider)SetAlias(val *string) {
 	_jsii_.Set(
 		j,
 		"alias",
@@ -235,6 +238,9 @@ func (j *jsiiProxy_NullProvider) SetAlias(val *string) {
 func NullProvider_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
+	if err := validateNullProvider_IsConstructParameters(x); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
@@ -259,6 +265,9 @@ func NullProvider_TfResourceType() *string {
 }
 
 func (n *jsiiProxy_NullProvider) AddOverride(path *string, value interface{}) {
+	if err := n.validateAddOverrideParameters(path, value); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"addOverride",
@@ -267,6 +276,9 @@ func (n *jsiiProxy_NullProvider) AddOverride(path *string, value interface{}) {
 }
 
 func (n *jsiiProxy_NullProvider) OverrideLogicalId(newLogicalId *string) {
+	if err := n.validateOverrideLogicalIdParameters(newLogicalId); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"overrideLogicalId",
