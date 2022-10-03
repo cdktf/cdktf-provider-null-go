@@ -1,5 +1,4 @@
-// Prebuilt null Provider for Terraform CDK (cdktf)
-package null
+package resource
 
 import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"

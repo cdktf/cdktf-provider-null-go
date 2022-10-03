@@ -1,5 +1,4 @@
-// Prebuilt null Provider for Terraform CDK (cdktf)
-package null
+package provider
 
 
 type NullProviderConfig struct {

@@ -1,12 +1,11 @@
-// Prebuilt null Provider for Terraform CDK (cdktf)
-package null
+package resource
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/hashicorp/cdktf-provider-null-go/null/v2/jsii"
+	_init_ "github.com/hashicorp/cdktf-provider-null-go/null/v3/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/hashicorp/cdktf-provider-null-go/null/v2/internal"
+	"github.com/hashicorp/cdktf-provider-null-go/null/v3/resource/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
@@ -308,7 +307,7 @@ func NewResource(scope constructs.Construct, id *string, config *ResourceConfig)
 	j := jsiiProxy_Resource{}
 
 	_jsii_.Create(
-		"@cdktf/provider-null.Resource",
+		"@cdktf/provider-null.resource.Resource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -321,7 +320,7 @@ func NewResource_Override(r Resource, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"@cdktf/provider-null.Resource",
+		"@cdktf/provider-null.resource.Resource",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -429,7 +428,7 @@ func Resource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"@cdktf/provider-null.Resource",
+		"@cdktf/provider-null.resource.Resource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -442,7 +441,7 @@ func Resource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"@cdktf/provider-null.Resource",
+		"@cdktf/provider-null.resource.Resource",
 		"tfResourceType",
 		&returns,
 	)
