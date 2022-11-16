@@ -16,6 +16,14 @@ func validateNullProvider_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
+func validateNullProvider_IsTerraformElementParameters(x interface{}) error {
+	return nil
+}
+
+func validateNullProvider_IsTerraformProviderParameters(x interface{}) error {
+	return nil
+}
+
 func validateNewNullProviderParameters(scope constructs.Construct, id *string, config *NullProviderConfig) error {
 	return nil
 }
