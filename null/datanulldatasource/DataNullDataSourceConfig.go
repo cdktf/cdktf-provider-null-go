@@ -8,7 +8,7 @@ type DataNullDataSourceConfig struct {
 	// Experimental.
 	Connection interface{} `field:"optional" json:"connection" yaml:"connection"`
 	// Experimental.
-	Count *float64 `field:"optional" json:"count" yaml:"count"`
+	Count interface{} `field:"optional" json:"count" yaml:"count"`
 	// Experimental.
 	DependsOn *[]cdktf.ITerraformDependable `field:"optional" json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
@@ -23,11 +23,11 @@ type DataNullDataSourceConfig struct {
 	//
 	// If not, its value defaults to `"default"`. This argument exists primarily for testing and has little practical use.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#has_computed_default DataNullDataSource#has_computed_default}
+	// Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/null/3.2.1/docs/data-sources/data_source#has_computed_default DataNullDataSource#has_computed_default}
 	HasComputedDefault *string `field:"optional" json:"hasComputedDefault" yaml:"hasComputedDefault"`
 	// A map of arbitrary strings that is copied into the `outputs` attribute, and accessible directly for interpolation.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/null/d/data_source#inputs DataNullDataSource#inputs}
+	// Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/null/3.2.1/docs/data-sources/data_source#inputs DataNullDataSource#inputs}
 	Inputs *map[string]*string `field:"optional" json:"inputs" yaml:"inputs"`
 }
 

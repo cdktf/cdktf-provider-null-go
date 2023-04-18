@@ -2,14 +2,14 @@ package provider
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-null-go/null/v5/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-null-go/null/v6/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-null-go/null/v5/provider/internal"
+	"github.com/cdktf/cdktf-provider-null-go/null/v6/provider/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/null null}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/null/3.2.1/docs null}.
 type NullProvider interface {
 	cdktf.TerraformProvider
 	Alias() *string
@@ -180,7 +180,7 @@ func (j *jsiiProxy_NullProvider) TerraformResourceType() *string {
 }
 
 
-// Create a new {@link https://www.terraform.io/docs/providers/null null} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.1/docs null} Resource.
 func NewNullProvider(scope constructs.Construct, id *string, config *NullProviderConfig) NullProvider {
 	_init_.Initialize()
 
@@ -198,7 +198,7 @@ func NewNullProvider(scope constructs.Construct, id *string, config *NullProvide
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/null null} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.1/docs null} Resource.
 func NewNullProvider_Override(n NullProvider, scope constructs.Construct, id *string, config *NullProviderConfig) {
 	_init_.Initialize()
 

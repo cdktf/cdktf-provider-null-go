@@ -64,6 +64,10 @@ func validateDataNullDataSource_IsTerraformElementParameters(x interface{}) erro
 	return nil
 }
 
+func (j *jsiiProxy_DataNullDataSource) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_DataNullDataSource) validateSetHasComputedDefaultParameters(val *string) error {
 	return nil
 }
