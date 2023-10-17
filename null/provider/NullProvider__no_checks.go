@@ -15,6 +15,10 @@ func (n *jsiiProxy_NullProvider) validateOverrideLogicalIdParameters(newLogicalI
 	return nil
 }
 
+func validateNullProvider_GenerateConfigForImportParameters(scope constructs.Construct, importToId *string, importFromId *string) error {
+	return nil
+}
+
 func validateNullProvider_IsConstructParameters(x interface{}) error {
 	return nil
 }
