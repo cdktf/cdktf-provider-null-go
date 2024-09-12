@@ -12,7 +12,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/null/3.2.2/docs/data-sources/data_source null_data_source}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/null/3.2.3/docs/data-sources/data_source null_data_source}.
 type DataNullDataSource interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -322,7 +322,7 @@ func (j *jsiiProxy_DataNullDataSource) TerraformResourceType() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.2/docs/data-sources/data_source null_data_source} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.3/docs/data-sources/data_source null_data_source} Data Source.
 func NewDataNullDataSource(scope constructs.Construct, id *string, config *DataNullDataSourceConfig) DataNullDataSource {
 	_init_.Initialize()
 
@@ -340,7 +340,7 @@ func NewDataNullDataSource(scope constructs.Construct, id *string, config *DataN
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.2/docs/data-sources/data_source null_data_source} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/null/3.2.3/docs/data-sources/data_source null_data_source} Data Source.
 func NewDataNullDataSource_Override(d DataNullDataSource, scope constructs.Construct, id *string, config *DataNullDataSourceConfig) {
 	_init_.Initialize()
 
